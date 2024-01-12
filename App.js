@@ -22,13 +22,13 @@ class Api extends Component {
 
   render() {
     return (
-      <View style={StyleSheet.container}>
-        <Text style={StyleSheet.title}>Data Generated From Django</Text>
+      <View style={styles.container}>
+        <Text style={styles.title}>Data Generated From Django</Text>
         <View>
           {this.state.details.map((output, id) => (
             <View key={id}>
-              <Text>{output.nom}</Text>
-              <Text>{output.description}</Text>
+              <Text style={styles.nom}>{output.nom}</Text>
+              <Text style={styles.description}>{output.description}</Text>
             </View>
           ))}
         </View>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    backgroundColor: '#blue',
+    backgroundColor: '#eaeaea',
   },
   title: {
     marginTop: 16,
@@ -55,6 +55,16 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
   },
+
+  nom: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+
+  description: {
+    fontStyle: 'italic',
+  }
+
 });
   
 
